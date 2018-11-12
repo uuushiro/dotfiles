@@ -151,6 +151,7 @@ alias s='cd ~/git/stats'
 alias f='cd ~/git/facelist'
 alias ta='cd ~/git/tunag-android'
 alias d='cd ~/git/devops'
+alias dot='cd ~/git/dotfiles'
 alias tmux='tmux -2'
 alias ctag='brew --prefix ctags'
 alias vim_euc="vim -c ':e ++enc=euc-jp'"
@@ -233,4 +234,23 @@ export PATH=$PATH:$HOME/shellscript/
 [ -f ~/.naverc ] && . ~/.naverc || true
 
 
-
+# --------------------------------------
+# Google search from terminal
+# --------------------------------------
+ggr(){
+    if [ $(echo $1 | egrep "^-[cfs]$") ]; then
+        local opt="$1"
+        shift
+    fi
+    local url="https://www.google.co.jp/search?q=${*// /+}"
+    local app="/Applications"
+    local g="${app}/Google Chrome.app"
+    local f="${app}/Firefox.app"
+    local s="${app}/Safari.app"
+    case ${opt} in
+        "-g")   open "${url}" -a "$g";;
+        "-f")   open "${url}" -a "$f";;
+        "-s")   open "${url}" -a "$s";;
+        *)      open "${url}";;
+    esac
+}
