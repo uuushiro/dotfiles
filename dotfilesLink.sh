@@ -1,4 +1,4 @@
 #!/bin/sh
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/.tmux.conf ~/.tmux.conf
+ln -sf ~/git/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/git/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/git/dotfiles/.tmux.conf ~/.tmux.conf
